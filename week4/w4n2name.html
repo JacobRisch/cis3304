@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+        #helloname {
+            font-weight: bold;
+			font-size: 32px;
+        }
+    </style>
+    <script>
+        function nameHello() {
+            document.getElementById('helloname').innerHTML
+                = "Nice to meet you " + document.getElementById('username').value + "!";
+        }
+    </script>
+</head>
+
+<body>
+    <input id="username" type="text" name="name" placeholder="Enter Name Please!">
+    <button onclick="nameHello()">Retrieve Greeting</button>
+    <p id="helloname"></p>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+
+		var firstnum = (parseInt(document.getElementById('first').value));
+		var secondnum = (parseInt(document.getElementById('second').value));
+        function Add() {
+		document.getElementById('operator').innerHTML = "+";
+			 document.getElementById('answer').innerHTML = (parseInt(document.getElementById('first').value) 
+			 + parseInt(document.getElementById('second').value)).toString();
+        }
+		function Subtract() {
+		document.getElementById('operator').innerHTML = "-";
+			 document.getElementById('answer').innerHTML = (parseInt(document.getElementById('first').value) 
+			 - parseInt(document.getElementById('second').value)).toString();
+        }
+		function Multiply() {
+		document.getElementById('operator').innerHTML = "*";
+			 document.getElementById('answer').innerHTML = (parseInt(document.getElementById('first').value) 
+			 * parseInt(document.getElementById('second').value)).toString();
+        }
+		function Divide() {
+		document.getElementById('operator').innerHTML = "/";
+			 document.getElementById('answer').innerHTML = (parseInt(document.getElementById('first').value) 
+			 / parseInt(document.getElementById('second').value)).toString();
+			 
+        }
+		function Power() {
+		document.getElementById('operator').innerHTML = "^";
+			 document.getElementById('answer').innerHTML = 
+			 (Math.pow((parseInt(document.getElementById('first').value)),(parseInt(document.getElementById('second').value)))).toString();
+        }
+		function Fahrenheit() {
+		document.getElementById('operator').innerHTML = "Fahrenheit to Celsius";
+			 document.getElementById('answer').innerHTML = 
+			 (((parseInt(document.getElementById('first').value)) - 32)*(5/9)).toString();
+        }
+		function Celsius() {
+		document.getElementById('operator').innerHTML = "Celsius to Fahrenheit";
+			 document.getElementById('answer').innerHTML = 
+			 (((parseInt(document.getElementById('first').value))*(9/5)) + 32).toString();
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Jacob's Calculator</h1>
+    <p>Enter two numbers and select an operator.</p>
+    <input id="first" type="text" name="nums" placeholder="Enter your first number:">
+	<p id="operator"></p>
+	<input id="second" type="text" name="nums" placeholder="Enter your second number:">
+	<p>=</p>
+	<p id ="answer"></p>
+	</br>
+    <button onclick="Add()">+</button>
+	<button onclick="Subtract()">-</button>
+	<button onclick="Multiply()">*</button>
+	<button onclick="Divide()">/</button>
+	<button onclick="Power()">X^Y</button>
+	<button onClick="Fahrenheit()">Fahrenheit to Celsius</button>
+	<button onClick="Celsius()">Celsius to Fahrenheit</button>
+	</br>
+	<p>Note: If you are using the Fahrenheit or Celsius converters, only the value in the first text box will be acknowledged.</p>
+	</br>
+	<p>Note: If you are using the X^Y button, the first textbox is X and the second is Y.</p>
+	
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        var answer = Math.floor(Math.random() * 10) + 1;
+        var count = 1;
+        function userAttempt() {
+            var guess = parseInt(document.getElementById('attempt').value);
+            if(guess===answer){
+				if(count == 1) {
+			document.getElementById('correct').innerHTML = "Correct in 1 try";
+				} else {
+            document.getElementById('correct').innerHTML = "Correct in " + count + " tries";
+			}
+            } else if (guess < answer) {
+                if(count == 1) {
+			document.getElementById('correct').innerHTML = "Too Low, you are at 1 try";
+				} else {
+            document.getElementById('correct').innerHTML = "Too Low, you are at " + count + " tries";
+			}
+            } else {
+                if(count == 1) {
+			document.getElementById('correct').innerHTML = "Too High, you are at 1 try";
+				} else {
+            document.getElementById('correct').innerHTML = "Too High, you are at " + count + " tries";
+			}
+            }
+            count++;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Jacob's Guessing Game</h1>
+    <p>Guess the number between 1 and 10</p>
+    <input id="attempt" type="text" name="guessin" placeholder="Enter your guess here:">
+    <button onclick="userAttempt()">Guess</button>
+    <p id="correct"></p>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: white;
+			font-size: 12px;
+        }
+    </style>
+    <script>
+        function redBckgrnd() {
+            var x = document.getElementById('bc');
+            x.style.backgroundColor = 'Red';
+            x.style.color = 'blue';
+            x.style.fontSize = '10px';
+        }
+        function greenBckgrnd() {
+            var x = document.getElementById('bc');
+            x.style.backgroundColor = 'Green';
+            x.style.color = 'orange';
+            x.style.fontSize = '20px';
+        }
+        function blueBckgrnd() {
+            var x = document.getElementById('bc');
+            x.style.backgroundColor = 'Blue';
+            x.style.color = 'red';
+            x.style.fontSize = '30px';
+        }
+		function whiteBckgrnd() {
+			var x = document.getElementById('bc');
+            x.style.backgroundColor = 'White';
+            x.style.color = 'black';
+            x.style.fontSize = '12px';
+		}
+    </script>
+</head>
+
+<body id="bc">
+    <button onclick="redBckgrnd()">Red</button>
+    <button onclick="greenBckgrnd()">Green</button>
+    <button onclick="blueBckgrnd()">Blue</button>
+	<button onclick="whiteBckgrnd()">Original</button>
+    <h1>Jacob's Awesome Page</h1>
+
+</body>
+
+</html>
