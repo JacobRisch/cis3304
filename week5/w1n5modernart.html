@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Jacob's Modern Art</title>
+    <style>
+    	* { padding: 0; margin: 0; }
+    	canvas { background: #eee; display: block; margin: 0 auto; }
+    </style>
+</head>
+<body>
+ <h1>Jacob's Awesome Modern Art Page</h1>
+<canvas id="myCanvas" width="480" height="320">
+
+</canvas>
+
+<script>
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	var bx = 480;
+	var by = 320;
+	var total = (Math.floor(Math.random() * 100) + 1 ); 
+	function randomNumX() {
+	var X = (Math.random() * 480) + 1; 
+	return X;
+	}
+	function randomNumY() {
+	var Y = (Math.random() * 320) + 1; 
+	return Y;
+	}
+	function randomColor() { 
+		var color = Math.floor(Math.random() * 16777216).toString(16); 
+		return '#000000'.slice(0, -color.length) + color; 
+	}
+	function randomCirc(ctx) {
+	ctx.beginPath();
+			ctx.arc(randomNumX(), randomNumY(), 5, 0, Math.PI*2);
+			ctx.fillStyle = randomColor();
+			ctx.fill();
+			ctx.strokeStyle = randomColor();
+			ctx.stroke();
+		ctx.closePath();
+	}
+	function randomRect(ctx) {
+		ctx.beginPath();
+			ctx.rect(randomNumX(), randomNumY(), randomNumX(), randomNumY(), Math.PI*2);
+			ctx.fillStyle = randomColor();
+			ctx.fill();
+		ctx.closePath();
+	}
+	for (i = 0; i < total; i++) {
+            randomRect(ctx);
+			randomCirc(ctx);
+        }
+	for (i = 0; i < total; i++) {
+	ctx.beginPath();
+			ctx.rect(0, 0, bx, by, Math.PI*2);
+			ctx.strokeStyle = randomColor();
+			ctx.stroke();
+	ctx.closePath();
+	bx = bx-10;
+	by = by-(20/3);
+	}
+	
+	
+	
+
+</script>
+
+</body>
+</html>
